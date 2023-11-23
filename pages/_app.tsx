@@ -6,7 +6,7 @@ import '@/styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <NextUIProvider>
+    <NextUIProvider className='h-full'>
       <div className="relative flex flex-col h-full">
         <main className="dark text-foreground bg-background h-full">
           <Component {...pageProps} />

@@ -1,10 +1,9 @@
 import { FC } from "react"
 import { useRouter } from "next/router";
-import {Card, CardHeader, CardBody, Image, CardFooter, Button} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, Image, CardFooter } from "@nextui-org/react";
 
 import { SmallPokemon } from "@/interfaces";
 import { capitalizeFirstLetter } from "@/helpers";
-import { FavoriteIcon } from "../ui/FavoriteIcon";
 import NoImage from '../../public/no_image.svg';
 
 type Props = {
@@ -23,9 +22,6 @@ export const PokemonCard: FC<Props> = ({ pokemon }) => {
     <Card className="py-4" isPressable onPress={onPressPokemon}>
       <CardHeader className="pb-0 pt-2 px-4 flex-row justify-between">
         <h3 className="font-bold text-large">{ capitalizeFirstLetter( pokemon.name ) }</h3>
-        {/* <Button isIconOnly color="danger" aria-label="Like">
-          <FavoriteIcon />
-        </Button>   */}
       </CardHeader>
       <CardBody className="overflow-visible py-2">
         {

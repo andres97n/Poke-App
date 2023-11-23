@@ -21,7 +21,7 @@ export const Layout: FC<Props> = ({ children, title = 'Pokemon App' }) => {
 
       <NavbarUI />
 
-      <main>
+      <main className="h-full">
         { children }
       </main>
     </>

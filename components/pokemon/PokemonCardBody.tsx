@@ -12,8 +12,8 @@ type Props = {
 
 export const PokemonCardBody: FC<Props> = ({ pokemon }) => {
   return (
-    <CardBody className="grid grid-cols-3 gap-2">
-      <div className="flex flex-col justify-center">
+    <CardBody className="grid lg:grid-cols-3 gap-4 xs:grid-cols-2">
+      <div className="flex flex-col justify-center items-center">
         {
           pokemon.sprites.other?.dream_world.front_default
             ? (
@@ -34,7 +34,7 @@ export const PokemonCardBody: FC<Props> = ({ pokemon }) => {
       </div>
       <div className="flex flex-col">
         <div className="flex flex-col items-center py-2">
-          <h4 className="pb-3">Tipos</h4>
+          <h4 className="pb-3 text-lg font-bold">Tipos</h4>
           <div className="flex flex-row flex-wrap gap-2">
             {
               pokemon.types.map( ( type, index ) => (
@@ -45,7 +45,7 @@ export const PokemonCardBody: FC<Props> = ({ pokemon }) => {
         </div>
         <Divider className="my-4" />
         <div className="flex flex-col items-center">
-          <h4 className="pb-3">Estadísticas</h4>
+          <h4 className="pb-3 text-lg font-bold">Estadísticas</h4>
           <div className="flex flex-row flex-wrap justify-center gap-2">
             {
               pokemon.stats.map( ( stat, index ) => (
@@ -58,8 +58,8 @@ export const PokemonCardBody: FC<Props> = ({ pokemon }) => {
       
       <div className="flex flex-col">
         <div className="flex flex-col items-center py-2">
-          <h4 className="pb-3">Hablidades</h4>
-          <div className="flex flex-row flex-wrap gap-2">
+          <h4 className="pb-3 text-lg font-bold">Hablidades</h4>
+          <div className="flex flex-row flex-wrap justify-center gap-2">
             {
               pokemon.abilities.map( ( ability, index ) => (
                 <Chip key={index} color="success">{ability.ability.name}</Chip>
@@ -69,7 +69,7 @@ export const PokemonCardBody: FC<Props> = ({ pokemon }) => {
         </div>
         <Divider className="my-4" />
         <div className="flex flex-col items-center">
-          <h4 className="pb-3">Transformaciones</h4>
+          <h4 className="pb-3 text-lg font-bold">Transformaciones</h4>
           <div className="flex flex-row flex-wrap justify-center gap-2">
             {
               pokemon.forms.map( ( form, index ) => (
@@ -77,6 +77,13 @@ export const PokemonCardBody: FC<Props> = ({ pokemon }) => {
                 ))
               }
           </div>
+        </div>
+        <Divider className="my-4" />
+        <div className="flex flex-col items-center">
+          <h4 className="pb-3 text-lg font-bold">Peso</h4>
+          {/* <div className="flex flex-row flex-wrap justify-center gap-2"> */}
+            <h6 className="text-2xl font-bold">{ pokemon.weight } Kg</h6>
+          {/* </div> */}
         </div>
       </div>   
     </CardBody>
